@@ -3,7 +3,6 @@ require 'erb'
 require 'rss'
 require 'yaml'
 require 'ostruct'
-require 'pry-byebug'
 
 def feed_summary(feed_url)
   puts "generating summary for #{feed_url}"
