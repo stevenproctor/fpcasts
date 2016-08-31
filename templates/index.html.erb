@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./screen.css">
+  </head>
+  <body>
+    <h1>FPCasts</h1>
+    <h2>Your source for Functional Programing Related Podcasts</h2>
+
+    <div class="podcasts-listing">
+      <% for feed in feeds %>
+        <span class="podcast">
+          <p><a href="<%=feed.url%>" target="_blank" rel="noopener noreferrer"><img class="logo" src="<%= feed.image %>"></a></p>
+          <p class="title"><a href="<%=feed.url%>" target="_blank" rel="noopener noreferrer"><%= feed.title %></a></p>
+          <p class="description"><%= feed.description %></p>
+          <p class="latest-episode">Latest Episode</p>
+          <p class="last-published">Published: <%= feed.last_updated %></p>
+          <p class="latest-episode"><a href="<%= feed.latest_episode_link %>" target="_blank" rel="noopener noreferrer"><%= feed.latest_episode_title %></a></p>
+        </span>
+      <% end %>
+    </div>
+
+    <footer>
+      Missing a podcast? Let us know and <a href="https://github.com/stevenproctor/fpcasts" target="_blank" rel="noopener noreferrer">send us a pull request</a>.<br/><br/>
+      Copyright &#169; <%= Date.today.strftime("%Y") %>, <a href="https://www.functionalgeekery.com" target="_blank" rel="noopener noreferrer">Functional Geekery</a>.<br/>
+      All Rights Reserved.
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+body {
+  color: #16161d;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 6em;
+  font-family: monospace;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+}
+
+.podcasts-listing {
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.podcast {
+  text-align: center;
+  float: left;
+  width: 400px;
+  padding: 15px;
+}
+
+.podcast img.logo {
+  width: 200px;
+  height: 200px;
+}
+
+.podcast .title {
+  font-size: 1.7em;
+}
+
+.podcast .description {
+  font-size: 1.3em;
+}
+
+footer {
+  clear: both;
+  text-align: center;
+}
