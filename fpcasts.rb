@@ -23,7 +23,7 @@ def feed_summary(feed_url)
     last_updated: latest.date.strftime("%F")
   })
 rescue
-  puts "error generating summary for feed: #{feed_url}"
+  STDERR.puts "error generating summary for feed: #{feed_url}"
 end
 
 def get_feed_summaries(feed_config)
