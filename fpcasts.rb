@@ -5,7 +5,7 @@ require 'yaml'
 require 'ostruct'
 
 def feed_summary(feed_url)
-  puts "generating summary for #{feed_url}"
+  puts "[#{Time.now}] generating summary for #{feed_url}"
   rss = RSS::Parser.parse(feed_url, false)
   latest = rss.items.first
   if (rss.channel.itunes_image)
@@ -28,7 +28,7 @@ end
 
 def get_feed_summaries(feed_config)
   feed_urls = YAML.load(File.read(feed_config))
-  feed_urls.map{ |feed_url| feed_summary(feed_url) }.sort_by{ |feed| feed.title }
+  feed_urls.map{ |feed_url| feed_summary(feed_url) }.sort_by{ |feed| feed.title.downcase }
 end
 
 def main(config, template_path, output_path)
