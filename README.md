@@ -15,3 +15,5 @@ If a rising tide raises all ships, this is an attempt to throw some rocks in the
 If there is a podcast missing from the list, please create a pull request to add the podcast feed to the listing.
 
 To add a podcast, add the podcast feed to the `config/feeds.yml` file in the project, and submit the change as a pull request.
+
+Copyright 2016, Steven Proctor
