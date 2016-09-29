@@ -14,7 +14,7 @@ def get_image_path!(rss, output_directory)
     image_location = rss.image.url
   end
 
-  image_path = File.basename(image_location)
+  image_path = File.basename(image_location).split("?").first
 
   `wget -O - #{image_location} > #{File.join(output_directory, image_path)}`
 
