@@ -36,8 +36,11 @@ def feed_summary(feed_url, output_directory)
     latest_episode_link: latest.link,
     last_updated: latest.date.strftime("%F")
   })
-rescue
-  STDERR.puts "error generating summary for feed: #{feed_url}"
+rescue => e
+  STDERR.puts "error generating summary for feed: #{feed_url}; error was: #{e.inspect}"
+  OpenStruct.new({
+    url: feed_url,
+  })
 end
 
 def get_feed_summaries(feed_config, output_directory)
